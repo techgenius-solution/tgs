@@ -14801,6 +14801,7 @@ textarea {
   width: 24px;
   height: 24px;
   flex: 0 0 auto;
+  margin-top: 14px; /* new add */
 }
 .event__details-inner-content .about__info-list-item p {
   font-size: 16px;

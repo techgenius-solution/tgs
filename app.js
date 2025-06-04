@@ -1,28 +1,29 @@
 const express = require('express');
 const app = express();
+const path = require("path");
 const port = process.env.PORT || 3000;
 
 const sequelize = require('./config/database');
 const logger = require('./middleware/logger');
 const mainRoutes = require('./routes/mainRoutes');
-const path = require("path");
+const mailRoutes = require('./routes/mailRoutes'); // <-- ✅ add this
 
-// Middleware
-app.use(express.json());
+// 🧠 MIDDLEWARE
+app.use(express.json()); // <-- ✅ must come before routes
+app.use(express.urlencoded({ extended: true })); // <-- ✅ just in case form data is sent
 app.use(express.static('public'));
 app.use('/assets', express.static(path.join(__dirname, 'public/html/skillgro/assets')));
 app.use(logger);
 
-// Routes
-// app.use('/api/users', userRoutes);
+// 📁 ROUTES
 app.use('/', mainRoutes);
+app.use('/api/mail', mailRoutes); // <-- ✅ this is your email route
 
-// Test + Sync DB
+// 🛠️ TEST + DB SYNC
 (async () => {
     try {
         await sequelize.authenticate();
         console.log('✅ Database connected.');
-
         await sequelize.sync({ alter: true });
         console.log('✅ Models synchronized.');
 
