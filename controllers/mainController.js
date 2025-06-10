@@ -33,3 +33,16 @@ exports.getCourseDetailsHTML = (req, res) => {
 exports.getEventDetailsHTML = (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/skillgro/events-details.html'));
 };
+
+exports.getInstructorDetailsHovoHTML = (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/skillgro/instructor-details_hovo.html'));
+};
+exports.getInstructorDetailsArturHTML = (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/skillgro/instructor-details_artur.html'));
+};
+exports.getInstructorDetailsSamvelHTML = (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/skillgro/instructor-details_samvel.html'));
+};
+exports.getInstructorDetailsSerobHTML = (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/skillgro/instructor-details_serob.html'));
+};

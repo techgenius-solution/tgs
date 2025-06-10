@@ -14,4 +14,16 @@ router.get('/blog-details', mainController.getBlogDetailsHTML);
 router.get('/course-details', mainController.getCourseDetailsHTML);
 router.get('/events-details', mainController.getEventDetailsHTML);
 
+router.get('/events-details_sanosyan', mainController.getInstructorDetailsHovoHTML);
+router.get('/events-details_nalbandyan', mainController.getInstructorDetailsArturHTML);
+router.get('/events-details_movsisyan', mainController.getInstructorDetailsSamvelHTML);
+router.get('/events-details_asatryan', mainController.getInstructorDetailsSerobHTML);
+
+
+
+
+
+
+
+
 module.exports = router;
