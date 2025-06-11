@@ -2,12 +2,11 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 
-// Use environment variables or hardcoded credentials
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'tgenius.solution@gmail.com',         // Replace with your email
-    pass: 'auoq stdk pwlc pxda'        // Replace with app password
+    user: 'tgenius.solution@gmail.com',
+    pass: 'auoq stdk pwlc pxda'
   }
 });
 
