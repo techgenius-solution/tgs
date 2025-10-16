@@ -1,9 +1,13 @@
 [build]
   command = "npm run build"
-  publish = "build"        # Folder with static files
-  functions = "netlify/functions"  # Folder with Node.js serverless functions
+  publish = "public/html/skillgro"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/api/:splat"
+  from = "/"
+  to = "/pages/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/:page"
+  to = "/pages/:page.html"
   status = 200
